@@ -11,10 +11,10 @@ class Routes extends Component {
       return (
         <div>
             <Switch>
-                <Route path="/tictactoe" component={TicTacToeGame} />
-                <Route path="/loveCalculator" component={LoveCalcGame} />
-                <Route path="/memoryGame" component={MemoryGame} />
-                <Route path="/" component={Home} />
+                <Route path="/react-classic-games/tictactoe" component={TicTacToeGame} />
+                <Route path="/react-classic-games/loveCalculator" component={LoveCalcGame} />
+                <Route path="/react-classic-games/memoryGame" component={MemoryGame} />
+                <Route path="/react-classic-games" component={Home} />
             </Switch>
         </div>
       );

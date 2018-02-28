@@ -11,20 +11,20 @@ class Header extends Component {
             <Navbar.Header>
                 <Navbar.Brand>
                     <img src = {logo} className="App-logo" width="auto" height="40px" alt="game-stop logo"/>
-                <Link to="/">GameStop</Link>
+                <Link to="/react-classic-games">GameStop</Link>
                 </Navbar.Brand>
                 <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
                 <ul className="nav navbar-nav">
                 <li className="nav-item">
-                    <Link to="/tictactoe"> Tic Tac Toe </Link>
+                    <Link to="/react-classic-games/tictactoe"> Tic Tac Toe </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/loveCalculator"> Love Calculator</Link>
+                    <Link to="/react-classic-games/loveCalculator"> Love Calculator</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/memoryGame"> Memory Game </Link>
+                    <Link to="/react-classic-games/memoryGame"> Memory Game </Link>
                 </li>
                 </ul>
             </Navbar.Collapse>
