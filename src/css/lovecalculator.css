@@ -1,0 +1,22 @@
+.lovers{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.lovers input{
+    width: 30%;
+}
+
+.love{
+    margin-left: 20px;
+    margin-right: 20px;
+    color: red;
+}
+
+.result{
+    font-size: 25px;
+    margin-top:30px;
+}

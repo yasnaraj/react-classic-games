@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  display: inline-block !important;
+  margin-right: 10px;
+
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.bodyContainer{
+  margin: 80px 20px 20px 20px;
+}
+
+.leftAlign{
+  text-align: left;
+}
+
+.homeJumbotron{
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 25px;
+}
+
+.headerBar{
+  height: 66px;
+}
+
+.headerBar  a{
+  color: white;
+}
+
+.navbar-collapse .collapse .in > ul > li, headerBar, .nav-item, .navbar-header, nav {
+  background: black !important;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
