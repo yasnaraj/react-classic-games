@@ -48,6 +48,19 @@
 .navbar-collapse .collapse .in > ul > li, headerBar, .nav-item, .navbar-header, nav {
   background: black !important;
 }
+
+.buttons{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.result{
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

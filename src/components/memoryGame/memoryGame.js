@@ -47,6 +47,7 @@ export default class MemoryGame extends Component {
            
             previousObjIndex: undefined,
             totalMatches: 0,
+            totalTry: 0,
             gameComplete: false
         }
 
@@ -80,7 +81,7 @@ export default class MemoryGame extends Component {
           array2[index].flipped = true;
           var previousObjIndex = this.state.previousObjIndex;
           var totalMatches = this.state.totalMatches;
-          
+          var totalTry = this.state.totalTry + 1;
           if(previousObjIndex !== undefined){
               if(array2[previousObjIndex].value === array2[index].value ){
                   array2[previousObjIndex].matched = true;
@@ -105,7 +106,7 @@ export default class MemoryGame extends Component {
             this.setState({gameComplete: true});
           }
 
-          this.setState({array: array2});
+          this.setState({array: array2, totalTry: totalTry});
       }
 
 
@@ -151,6 +152,7 @@ export default class MemoryGame extends Component {
            
             previousObjIndex: undefined,
             totalMatches: 0,
+            totalTry: 0,
             gameComplete: false
         });          
       }
@@ -162,7 +164,8 @@ export default class MemoryGame extends Component {
         <div className="bodyContainer">
             <h1 className="leftAlign">Memory Game</h1>
             
-            {this.state.gameComplete ? <div className="congrats"> Yayy you matched everything! </div> : null}
+            {this.state.gameComplete ? <div className="congrats"> Yayy you matched everything in {this.state.totalTry} tries! <br/>
+            Your efficiency is {Math.round((12/this.state.totalTry*100)*10 )/10}% </div> : null}
             {this.state.gameComplete ? <button className="btn btn-primary" onClick={this.replay}> Replay </button> : null}
             <div className="mainGame">          
                 <div className="game-board">

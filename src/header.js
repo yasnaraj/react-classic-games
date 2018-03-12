@@ -26,6 +26,9 @@ class Header extends Component {
                 <li className="nav-item">
                     <Link to="/react-classic-games/memoryGame"> Memory Game </Link>
                 </li>
+                <li className="nav-item">
+                    <Link to="/react-classic-games/stoneScissorPaper"> Stone Scissor Paper </Link>
+                </li>
                 </ul>
             </Navbar.Collapse>
         </Navbar>
