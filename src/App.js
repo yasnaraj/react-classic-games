@@ -8,7 +8,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Routes />
+        <Routes/>
+        <footer>
+          <strong> Developed By: Yasna R. | {(new Date().getFullYear()).toString()}</strong>
+        </footer>
       </div>
     );
   }

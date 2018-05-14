@@ -25,6 +25,13 @@
 
 .bodyContainer{
   margin: 80px 20px 20px 20px;
+  padding-bottom: 80px;
+  
+}
+
+h1, h2{
+  color: maroon !important;
+  font-weight: bolder;
 }
 
 .leftAlign{
@@ -32,8 +39,10 @@
 }
 
 .homeJumbotron{
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
   border-radius: 25px;
 }
 
@@ -58,10 +67,34 @@
 .result{
   font-size: 25px;
   font-weight: bold;
+  color: teal;
   font-style: italic;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  background: black;
+  color: white;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  height: 50px;
+}
+
+.navbar-collapse{
+  overflow: hidden;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 440px) {
+  .images{
+    width: 50px !important;
+    height: 50px !important;
+  }
 }

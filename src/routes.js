@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
+import Login from './components/login';
 import Home from './components/home';
 import TicTacToeGame from './components/tictactoe/game';
 import LoveCalcGame from './components/loveCalculator/loveCalcGame';
@@ -9,14 +10,34 @@ import StoneScissorPaperGame from './components/StoneScissorPaper/StoneScissorPa
 
 class Routes extends Component {
     render() {
+      const PrivateRoute = ({ component: Component, ...rest }) => (
+        <Route
+          {...rest}
+          render={props =>
+            sessionStorage.getItem('isUserLoggedIn') ? (
+              <Component {...props} />
+            ) : (
+              <Redirect
+                to={{
+                  pathname: "/react-classic-games/login",
+                  state: { from: props.location }
+                }}
+              />
+            )
+          }
+        />
+      );
+
       return (
         <div>
             <Switch>
                 <Route path="/react-classic-games/tictactoe" component={TicTacToeGame} />
                 <Route path="/react-classic-games/loveCalculator" component={LoveCalcGame} />
-                <Route path="/react-classic-games/memoryGame" component={MemoryGame} />
+                <PrivateRoute path="/react-classic-games/memoryGame" component={MemoryGame} />
                 <Route path="/react-classic-games/stoneScissorPaper" component={StoneScissorPaperGame} />
+                <Route path="/react-classic-games/login" component={Login} />
                 <Route path="/react-classic-games" component={Home} />
+                
             </Switch>
         </div>
       );

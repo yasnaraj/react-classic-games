@@ -163,12 +163,12 @@ export default class MemoryGame extends Component {
       return (
         <div className="bodyContainer">
             <h1 className="leftAlign">Memory Game</h1>
-            
+            <center><b>Go ahead.. Find the matching cards in the least possible tries!</b></center>
             {this.state.gameComplete ? <div className="congrats"> Yayy you matched everything in {this.state.totalTry} tries! <br/>
             Your efficiency is {Math.round((12/this.state.totalTry*100)*10 )/10}% </div> : null}
             {this.state.gameComplete ? <button className="btn btn-primary" onClick={this.replay}> Replay </button> : null}
             <div className="mainGame">          
-                <div className="game-board">
+                <div>
                     <MemoryBoard squares={this.state.array}
                     onClick = {this.checkIfMatch} />
                 </div>

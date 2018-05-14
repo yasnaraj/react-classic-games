@@ -6,12 +6,10 @@ export default class StoneScissorPaperGame extends Component {
         super(props);
         this.state = {
             value: undefined,
-            wrongGuess: false,
             result: undefined
         }
 
         this.handleClick = this.handleClick.bind(this);
-        this.replay = this.replay.bind(this);
     }
 
     handleClick(e) {
@@ -69,13 +67,6 @@ export default class StoneScissorPaperGame extends Component {
         }
     }
 
-    replay() {
-        this.setState({
-            value: undefined,
-            wrongGuess: false
-        });
-    }
-
     render() {
 
         return (
@@ -83,39 +74,44 @@ export default class StoneScissorPaperGame extends Component {
                 <h1 className="leftAlign">Stone Scissor Paper</h1>
                 <div>
                     <strong>Play this fun game of Stone, Scissor, Paper with the bot!</strong>
-            </div>
+                </div>
+                <br/>
                 <div className="buttons">
-                    <button className="btn btn-default buttons" onClick={() => this.handleClick('Stone')} id="Stone" disabled={this.state.wrongGuess}>
-                        <img src={require('../../images/stone.png')} alt="Stone" width="80" height="80" /><br />
+                    <button className="btn btn-default buttons" onClick={() => this.handleClick('Stone')} id="Stone">
+                        <img src={require('../../images/stone.png')} alt="Stone" width="80" height="80" className="images"/><br />
                         Stone </button>
-                    <button className="btn btn-default buttons" onClick={() => this.handleClick('Scissor')} id="Scissor" disabled={this.state.wrongGuess}>
-                        <img src={require('../../images/scissor.png')} alt="Scissor" width="80" height="80" /><br />
+                    <button className="btn btn-default buttons" onClick={() => this.handleClick('Scissor')} id="Scissor">
+                        <img src={require('../../images/scissor.png')} alt="Scissor" width="80" height="80" className="images"/><br />
                         Scissor </button>
-                    <button className="btn btn-default buttons" onClick={() => this.handleClick('Paper')} id="Paper" disabled={this.state.wrongGuess}>
-                        <img src={require('../../images/paper.png')} alt="Paper" width="80" height="80" /><br />
+                    <button className="btn btn-default buttons" onClick={() => this.handleClick('Paper')} id="Paper">
+                        <img src={require('../../images/paper.png')} alt="Paper" width="80" height="80" className="images"/><br />
                         Paper </button>
                 </div>
-                Bot Chooses:
+                
+                <img src={require('../../images/bot.png')} alt="Paper" width="90" height="90" className="images"/>
+                <b>Bot Chooses:</b>
                 {this.state.value === 'Stone' ?
                     <button className="btn btn-default buttons" id="StoneAns" disabled={true}>
-                        <img src={require('../../images/stone.png')} alt="Stone" width="80" height="80" /><br />
+                        <img src={require('../../images/stone.png')} alt="Stone" width="80" height="80" className="images"/><br />
                         Stone </button> :
                     this.state.value === 'Scissor' ?
                         <button className="btn btn-default buttons" id="ScissorAns" disabled={true}>
-                            <img src={require('../../images/scissor.png')} alt="Scissor" width="80" height="80" /><br />
+                            <img src={require('../../images/scissor.png')} alt="Scissor" width="80" height="80" className="images"/><br />
                             Scissor </button> :
                     this.state.value === 'Paper' ?
-                        <button className="btn btn-default buttons" id="PaperAns" disabled={this.state.wrongGuess}>
-                            <img src={require('../../images/paper.png')} alt="Paper" width="80" height="80" /><br />
+                        <button className="btn btn-default buttons" id="PaperAns" disabled={true}>
+                            <img src={require('../../images/paper.png')} alt="Paper" width="80" height="80" className="images"/><br />
                             Paper </button> :
-                            null
+                            <div style={{display: 'inline-block', width: '82px', height: '82px'}} className="images"></div>
                 }
 
                 <br />
-                <span className="result">{this.state.result}</span>
+                {this.state.result ?
+                    <span className="result">
+                    {this.state.result}</span> : null}
+                
                 <br />
 
-                {this.state.wrongGuess ? <button className="btn btn-primary" onClick={this.replay}> Replay </button> : null}
             </div>
         );
     }

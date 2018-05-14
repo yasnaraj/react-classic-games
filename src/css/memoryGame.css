@@ -5,8 +5,10 @@
 
 .flexChild{
   flex: 1 0 25%;
+  display: inline-block;
+  flex-grow: 1;
   margin: 5px;
-  height: 60%;
+  height: 100px;
   border-radius: 15px;
   border: solid 2px purple;
   background: linear-gradient(to right, #d660b1, #fbad50,  #e95950);

@@ -85,6 +85,8 @@ export default class TicTacToeGame extends Component {
       return (
         <div className="bodyContainer">
             <h1 className="leftAlign">Tic-Tac-Toe</h1>
+            <b> Enjoy this classic game with your friend!</b>
+            <br/>
             <div className="status">{status}</div>
             <div className="mainGame">
                 <div className="game-board">

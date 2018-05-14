@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import logo from './images/logo.png';
 
 class Header extends Component {
+    constructor(props){
+        super(props);
+        this.logout = this.logout.bind(this);
+    }
+
+    logout(){
+        sessionStorage.removeItem('isUserLoggedIn');
+        this.props.history.push('/react-classic-games/login');
+    }
 
   render() {
     return (
@@ -24,10 +33,27 @@ class Header extends Component {
                     <Link to="/react-classic-games/loveCalculator"> Love Calculator</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/react-classic-games/memoryGame"> Memory Game </Link>
-                </li>
-                <li className="nav-item">
                     <Link to="/react-classic-games/stoneScissorPaper"> Stone Scissor Paper </Link>
+                </li>
+                {
+                    sessionStorage.getItem('isUserLoggedIn') ? 
+                    <li className="nav-item">
+                        <Link to="/react-classic-games/memoryGame"> Memory Game* </Link>
+                    </li>
+                : null
+                }
+                </ul>
+
+                <ul className="nav navbar-nav navbar-right">
+                <li className="nav-item">
+                {
+                    sessionStorage.getItem('isUserLoggedIn') ? 
+                    <button className="btn btn-link" onClick={this.logout}> 
+                    <span className="glyphicon glyphicon-log-out"></span>  Logout </button>
+                    :
+                    <Link to="/react-classic-games/login"> <span className="glyphicon glyphicon-log-in"></span> Login</Link>
+
+                }
                 </li>
                 </ul>
             </Navbar.Collapse>
@@ -36,4 +62,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

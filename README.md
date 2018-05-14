@@ -8,3 +8,13 @@ This is a simple react application that contains some classic game examples like
 Here is the <a href="https://yasnaraj.github.io/react-classic-games/"> demo </a> of the application.
 
 This major goal of this application is to showcases the use of <a href="https://www.npmjs.com/package/react-router-dom" target="_blank">react-router-dom</a>
+
+To clone and run this application locally, execute the following commands:
+
+```
+git clone https://github.com/yasnaraj/react-classic-games.git
+cd react-classic-games
+npm install
+npm start
+
+```
